@@ -1,0 +1,89 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Elit ut non aliqua nostrud consequat mollit excepteur deserunt esse cupidatat magna. Sint qui occaecat incididunt irure. Cillum dolor anim aliqua deserunt sunt ea minim minim consectetur nisi Lorem."
+            }
+          }
+        ]
+      },
+      "sub_heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Eu sunt magna quis proident ad eiusmod nostrud amet eu magna duis. Elit excepteur sunt reprehenderit sunt adipisicing ipsum in nulla mollit amet tempor reprehenderit qui. Officia velit dolore tempor."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "icon_image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+                "width": 4016,
+                "height": 6016
+              },
+              "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+              "width": 4016,
+              "height": 6016,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "title",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Nulla consectetur laborum sunt veniam laborum ad sint dolore. Cupidatat Lorem ullamco amet consectetur aute enim eu consequat ullamco occaecat. Dolor fugiat voluptate occaecat."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Exercitation tempor sint proident sint aliqua veniam anim nisi esse voluptate deserunt in. Eu elit ex labore sunt consectetur duis laboris eu aliqua veniam irure nostrud."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

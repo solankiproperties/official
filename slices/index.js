@@ -4,13 +4,17 @@ import CallToAction from './CallToAction';
 import Content from './Content';
 import ContentCenter from './ContentCenter';
 import Featured from './Featured';
+import FeatureWithGrid from './FeatureWithGrid';
 import Footer from './Footer';
+import FooterCta from './FooterCta';
 import Header from './Header';
+import HeaderNotification from './HeaderNotification';
 import HeroWithEmbed from './HeroWithEmbed';
 import ImageWithParagraph from './ImageWithParagraph';
 import LogoBrand from './LogoBrand';
 import Navbar from './Navbar';
 import Products from './Products';
+import Profile from './Profile';
 import Testimonials from './Testimonials';
 import VideoBanner from './VideoBanner';
 
@@ -19,13 +23,17 @@ export {
 	Content,
 	ContentCenter,
 	Featured,
+	FeatureWithGrid,
 	Footer,
+	FooterCta,
 	Header,
+	HeaderNotification,
 	HeroWithEmbed,
 	ImageWithParagraph,
 	LogoBrand,
 	Navbar,
 	Products,
+	Profile,
 	Testimonials,
 	VideoBanner,
 };
@@ -35,13 +43,17 @@ export const components = {
 	content: Content,
 	content_center: ContentCenter,
 	featured: Featured,
+	feature_with_grid: FeatureWithGrid,
 	footer: Footer,
+	footer_cta: FooterCta,
 	header: Header,
+	header_notification: HeaderNotification,
 	hero_with_embed: HeroWithEmbed,
 	image_with_paragraph: ImageWithParagraph,
 	logo_brand: LogoBrand,
 	navbar: Navbar,
 	products: Products,
+	profile: Profile,
 	testimonials: Testimonials,
 	video_banner: VideoBanner,
 };

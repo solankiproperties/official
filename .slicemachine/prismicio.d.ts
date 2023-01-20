@@ -35,7 +35,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | ImageWithParagraphSlice;
+type HomepageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | ImageWithParagraphSlice | HeaderNotificationSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice;
 /**
  * Homepage document from Prismic
  *
@@ -75,7 +75,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice;
+type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | HeaderNotificationSlice | ImageWithParagraphSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice;
 /**
  * Page document from Prismic
  *
@@ -356,6 +356,91 @@ type FeaturedSliceVariation = FeaturedSliceDefault;
  */
 export type FeaturedSlice = prismicT.SharedSlice<"featured", FeaturedSliceVariation>;
 /**
+ * Primary content in FeatureWithGrid → Primary
+ *
+ */
+interface FeatureWithGridSliceDefaultPrimary {
+    /**
+     * Heading field in *FeatureWithGrid → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: feature_with_grid.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.RichTextField;
+    /**
+     * Sub Heading field in *FeatureWithGrid → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: feature_with_grid.primary.sub_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    sub_heading: prismicT.RichTextField;
+}
+/**
+ * Item in FeatureWithGrid → Items
+ *
+ */
+export interface FeatureWithGridSliceDefaultItem {
+    /**
+     * Icon Image field in *FeatureWithGrid → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: feature_with_grid.items[].icon_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    icon_image: prismicT.ImageField<never>;
+    /**
+     * Title field in *FeatureWithGrid → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: feature_with_grid.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Description field in *FeatureWithGrid → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: feature_with_grid.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for FeatureWithGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FeatureWithGrid`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeatureWithGridSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FeatureWithGridSliceDefaultPrimary>, Simplify<FeatureWithGridSliceDefaultItem>>;
+/**
+ * Slice variation for *FeatureWithGrid*
+ *
+ */
+type FeatureWithGridSliceVariation = FeatureWithGridSliceDefault;
+/**
+ * FeatureWithGrid Shared Slice
+ *
+ * - **API ID**: `feature_with_grid`
+ * - **Description**: `FeatureWithGrid`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeatureWithGridSlice = prismicT.SharedSlice<"feature_with_grid", FeatureWithGridSliceVariation>;
+/**
  * Primary content in Footer → Primary
  *
  */
@@ -441,6 +526,81 @@ type FooterSliceVariation = FooterSliceDefault;
  */
 export type FooterSlice = prismicT.SharedSlice<"footer", FooterSliceVariation>;
 /**
+ * Primary content in FooterCta → Primary
+ *
+ */
+interface FooterCtaSliceDefaultPrimary {
+    /**
+     * Heading field in *FooterCta → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_cta.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.RichTextField;
+    /**
+     * Subheading field in *FooterCta → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_cta.primary.subheading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subheading: prismicT.RichTextField;
+}
+/**
+ * Item in FooterCta → Items
+ *
+ */
+export interface FooterCtaSliceDefaultItem {
+    /**
+     * Cta Text field in *FooterCta → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_cta.items[].cta_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta_text: prismicT.KeyTextField;
+    /**
+     * Cta Link field in *FooterCta → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_cta.items[].cta_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link: prismicT.LinkField;
+}
+/**
+ * Default variation for FooterCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FooterCta`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterCtaSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterCtaSliceDefaultPrimary>, Simplify<FooterCtaSliceDefaultItem>>;
+/**
+ * Slice variation for *FooterCta*
+ *
+ */
+type FooterCtaSliceVariation = FooterCtaSliceDefault;
+/**
+ * FooterCta Shared Slice
+ *
+ * - **API ID**: `footer_cta`
+ * - **Description**: `FooterCta`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterCtaSlice = prismicT.SharedSlice<"footer_cta", FooterCtaSliceVariation>;
+/**
  * Primary content in Header → Primary
  *
  */
@@ -505,6 +665,71 @@ type HeaderSliceVariation = HeaderSliceDefault;
  *
  */
 export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
+/**
+ * Primary content in HeaderNotification → Primary
+ *
+ */
+interface HeaderNotificationSliceDefaultPrimary {
+    /**
+     * Notification Message field in *HeaderNotification → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: header_notification.primary.notification_message
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    notification_message: prismicT.RichTextField;
+}
+/**
+ * Item in HeaderNotification → Items
+ *
+ */
+export interface HeaderNotificationSliceDefaultItem {
+    /**
+     * Cta Text field in *HeaderNotification → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: header_notification.items[].cta_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta_text: prismicT.KeyTextField;
+    /**
+     * Cta Link field in *HeaderNotification → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: header_notification.items[].cta_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link: prismicT.LinkField;
+}
+/**
+ * Default variation for HeaderNotification Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `HeaderNotification`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeaderNotificationSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeaderNotificationSliceDefaultPrimary>, Simplify<HeaderNotificationSliceDefaultItem>>;
+/**
+ * Slice variation for *HeaderNotification*
+ *
+ */
+type HeaderNotificationSliceVariation = HeaderNotificationSliceDefault;
+/**
+ * HeaderNotification Shared Slice
+ *
+ * - **API ID**: `header_notification`
+ * - **Description**: `HeaderNotification`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeaderNotificationSlice = prismicT.SharedSlice<"header_notification", HeaderNotificationSliceVariation>;
 /**
  * Primary content in HeroWithEmbed → Primary
  *
@@ -911,6 +1136,121 @@ type ProductsSliceVariation = ProductsSliceDefault;
  */
 export type ProductsSlice = prismicT.SharedSlice<"products", ProductsSliceVariation>;
 /**
+ * Primary content in Profile → Primary
+ *
+ */
+interface ProfileSliceDefaultPrimary {
+    /**
+     * Image1 field in *Profile → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.primary.image1
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image1: prismicT.ImageField<never>;
+    /**
+     * Image2 field in *Profile → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.primary.image2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image2: prismicT.ImageField<never>;
+    /**
+     * Image3 field in *Profile → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.primary.image3
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image3: prismicT.ImageField<never>;
+    /**
+     * Heading field in *Profile → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.RichTextField;
+    /**
+     * Sub Heading field in *Profile → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.primary.sub_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    sub_heading: prismicT.RichTextField;
+    /**
+     * Description field in *Profile → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in Profile → Items
+ *
+ */
+export interface ProfileSliceDefaultItem {
+    /**
+     * Cta Text field in *Profile → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.items[].cta_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta_text: prismicT.KeyTextField;
+    /**
+     * Cta Link field in *Profile → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: profile.items[].cta_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link: prismicT.LinkField;
+}
+/**
+ * Default variation for Profile Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Profile`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProfileSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ProfileSliceDefaultPrimary>, Simplify<ProfileSliceDefaultItem>>;
+/**
+ * Slice variation for *Profile*
+ *
+ */
+type ProfileSliceVariation = ProfileSliceDefault;
+/**
+ * Profile Shared Slice
+ *
+ * - **API ID**: `profile`
+ * - **Description**: `Profile`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProfileSlice = prismicT.SharedSlice<"profile", ProfileSliceVariation>;
+/**
  * Primary content in Testimonials → Primary
  *
  */
@@ -1095,6 +1435,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, ContentCenterSliceDefaultPrimary, ContentCenterSliceDefault, ContentCenterSliceVariation, ContentCenterSlice, FeaturedSliceDefaultPrimary, FeaturedSliceDefaultItem, FeaturedSliceDefault, FeaturedSliceVariation, FeaturedSlice, FooterSliceDefaultPrimary, FooterSliceDefaultItem, FooterSliceDefault, FooterSliceVariation, FooterSlice, HeaderSliceDefaultPrimary, HeaderSliceDefaultItem, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroWithEmbedSliceDefaultPrimary, HeroWithEmbedSliceDefaultItem, HeroWithEmbedSliceDefault, HeroWithEmbedSliceVariation, HeroWithEmbedSlice, ImageWithParagraphSliceDefaultPrimary, ImageWithParagraphSliceDefaultItem, ImageWithParagraphSliceDefault, ImageWithParagraphSliceVariation, ImageWithParagraphSlice, LogoBrandSliceDefaultPrimary, LogoBrandSliceDefaultItem, LogoBrandSliceDefault, LogoBrandSliceVariation, LogoBrandSlice, NavbarSliceDefaultPrimary, NavbarSliceDefaultItem, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, ProductsSliceDefaultPrimary, ProductsSliceDefaultItem, ProductsSliceDefault, ProductsSliceVariation, ProductsSlice, TestimonialsSliceDefaultPrimary, TestimonialsSliceDefaultItem, TestimonialsSliceDefault, TestimonialsSliceVariation, TestimonialsSlice, VideoBannerSliceDefaultPrimary, VideoBannerSliceDefaultItem, VideoBannerSliceDefault, VideoBannerSliceVariation, VideoBannerSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, ContentCenterSliceDefaultPrimary, ContentCenterSliceDefault, ContentCenterSliceVariation, ContentCenterSlice, FeaturedSliceDefaultPrimary, FeaturedSliceDefaultItem, FeaturedSliceDefault, FeaturedSliceVariation, FeaturedSlice, FeatureWithGridSliceDefaultPrimary, FeatureWithGridSliceDefaultItem, FeatureWithGridSliceDefault, FeatureWithGridSliceVariation, FeatureWithGridSlice, FooterSliceDefaultPrimary, FooterSliceDefaultItem, FooterSliceDefault, FooterSliceVariation, FooterSlice, FooterCtaSliceDefaultPrimary, FooterCtaSliceDefaultItem, FooterCtaSliceDefault, FooterCtaSliceVariation, FooterCtaSlice, HeaderSliceDefaultPrimary, HeaderSliceDefaultItem, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeaderNotificationSliceDefaultPrimary, HeaderNotificationSliceDefaultItem, HeaderNotificationSliceDefault, HeaderNotificationSliceVariation, HeaderNotificationSlice, HeroWithEmbedSliceDefaultPrimary, HeroWithEmbedSliceDefaultItem, HeroWithEmbedSliceDefault, HeroWithEmbedSliceVariation, HeroWithEmbedSlice, ImageWithParagraphSliceDefaultPrimary, ImageWithParagraphSliceDefaultItem, ImageWithParagraphSliceDefault, ImageWithParagraphSliceVariation, ImageWithParagraphSlice, LogoBrandSliceDefaultPrimary, LogoBrandSliceDefaultItem, LogoBrandSliceDefault, LogoBrandSliceVariation, LogoBrandSlice, NavbarSliceDefaultPrimary, NavbarSliceDefaultItem, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, ProductsSliceDefaultPrimary, ProductsSliceDefaultItem, ProductsSliceDefault, ProductsSliceVariation, ProductsSlice, ProfileSliceDefaultPrimary, ProfileSliceDefaultItem, ProfileSliceDefault, ProfileSliceVariation, ProfileSlice, TestimonialsSliceDefaultPrimary, TestimonialsSliceDefaultItem, TestimonialsSliceDefault, TestimonialsSliceVariation, TestimonialsSlice, VideoBannerSliceDefaultPrimary, VideoBannerSliceDefaultItem, VideoBannerSliceDefault, VideoBannerSliceVariation, VideoBannerSlice };
     }
 }

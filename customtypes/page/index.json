@@ -59,6 +59,21 @@
             },
             "content_center": {
               "type": "SharedSlice"
+            },
+            "header_notification": {
+              "type": "SharedSlice"
+            },
+            "image_with_paragraph": {
+              "type": "SharedSlice"
+            },
+            "footer_cta": {
+              "type": "SharedSlice"
+            },
+            "profile": {
+              "type": "SharedSlice"
+            },
+            "feature_with_grid": {
+              "type": "SharedSlice"
             }
           }
         }

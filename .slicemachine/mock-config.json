@@ -91,6 +91,26 @@
           }
         }
       }
+    },
+    "HeaderNotification": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "FooterCta": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Profile": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "FeatureWithGrid": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

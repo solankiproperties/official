@@ -19,9 +19,9 @@ const LogoBrand = ({ slice }) => (
           {
   slice?.items?.map((item, i) =>
     <Image src={item.brand_logo_image.url} alt={item.brand_logo_image.alt} 
-    className="contrast-0 transition hover:contrast-100"
-    width={100}
-    height={100} />
+    className="contrast-0 transition hover:contrast-100 block rounded-xl border border-gray-800 p-8 shadow-xl hover:border-pink-500/10 hover:shadow-pink-500/10"
+    width={200}
+    height={200} />
   )
 }
 

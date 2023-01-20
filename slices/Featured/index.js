@@ -22,15 +22,13 @@ const Featured = ({ slice }) => (
    
      
       
-    <span
-    className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-  ></span>
+   
     <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 rounded-xl py-4 px-4 "
         >
    
    {
 slice?.items?.map((item, i) =>
-<div key={i}>
+<div key={i} className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
 <Image src={item.icon_image.url} width={100} height={100} className=" mb-4 w-12 h-12 rounded-full hover:scale-105 transition duration-100"/>
 <RichText field={item.heading} className="text-black mb-3 mt-2 text-xl font-bold" />
 <RichText field={item.sub_heading} className="text-dark mb-3 mt-2 text-xl font-light" />
