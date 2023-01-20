@@ -1,0 +1,96 @@
+{
+  "_cts": {
+    "homepage": {},
+    "page": {}
+  },
+  "slices": {
+    "HeroWithEmbed": {},
+    "LogoBrand": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Featured": {},
+    "Products": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "CallToAction": {
+      "default": {
+        "primary": {
+          "heading": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Testimonials": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Footer": {
+      "default": {
+        "primary": {
+          "brand_description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Header": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Navbar": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "VideoBanner": {},
+    "Content": {
+      "default": {
+        "primary": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "ContentCenter": {
+      "default": {
+        "primary": {
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "ImageWithParagraph": {
+      "default": {
+        "primary": {
+          "paragraph": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

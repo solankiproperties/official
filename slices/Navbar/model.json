@@ -1,0 +1,43 @@
+{
+  "id": "navbar",
+  "type": "SharedSlice",
+  "name": "Navbar",
+  "description": "Navbar",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Navbar",
+      "primary": {
+        "company_logo_image": {
+          "type": "Image",
+          "config": {
+            "label": "Company Logo Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "menu_bar_text": {
+          "type": "Text",
+          "config": {
+            "label": "Menu Bar Text",
+            "placeholder": ""
+          }
+        },
+        "menu_bar_link": {
+          "type": "Link",
+          "config": {
+            "label": "Menu Bar Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

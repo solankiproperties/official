@@ -1,0 +1,61 @@
+{
+  "id": "footer",
+  "type": "SharedSlice",
+  "name": "Footer",
+  "description": "Footer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Footer",
+      "primary": {
+        "brand_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Brand Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "brand_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Brand Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "copyright_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Copyright Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "footer_menu_text": {
+          "type": "Text",
+          "config": {
+            "label": "Footer Menu Text",
+            "placeholder": ""
+          }
+        },
+        "footer_menu_link": {
+          "type": "Link",
+          "config": {
+            "label": "Footer Menu Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

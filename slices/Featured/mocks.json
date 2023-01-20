@@ -1,0 +1,100 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Fallen"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sit nisi et velit magna voluptate laborum eiusmod duis consectetur ad nisi excepteur minim ad Lorem. Eu ea ipsum culpa."
+            }
+          }
+        ]
+      },
+      "sub_description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Qui culpa velit consequat tempor labore incididunt adipisicing. Proident ipsum deserunt nisi dolore reprehenderit esse aute in duis consectetur pariatur minim. Voluptate aliqua nulla magna ipsum laboris enim nulla reprehenderit."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "icon_image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+                "width": 6597,
+                "height": 4398
+              },
+              "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+              "width": 6597,
+              "height": 4398,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "heading",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Cupidatat sit ad esse est adipisicing anim voluptate et adipisicing. Deserunt incididunt occaecat sint ipsum cupidatat esse consequat deserunt aliqua ut Lorem veniam."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "sub_heading",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Voluptate magna velit amet enim aliquip eiusmod nisi incididunt laboris reprehenderit incididunt fugiat. Est adipisicing culpa laborum anim irure ipsum consectetur dolor."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]
