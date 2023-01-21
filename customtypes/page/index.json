@@ -84,6 +84,15 @@
             },
             "bottom_menu": {
               "type": "SharedSlice"
+            },
+            "offer_cta": {
+              "type": "SharedSlice"
+            },
+            "video_slice": {
+              "type": "SharedSlice"
+            },
+            "video_simple": {
+              "type": "SharedSlice"
             }
           }
         }

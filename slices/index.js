@@ -14,10 +14,13 @@ import HeroWithEmbed from './HeroWithEmbed';
 import ImageWithParagraph from './ImageWithParagraph';
 import LogoBrand from './LogoBrand';
 import Navbar from './Navbar';
+import OfferCta from './OfferCta';
 import Products from './Products';
 import Profile from './Profile';
 import Testimonials from './Testimonials';
 import VideoBanner from './VideoBanner';
+import VideoSimple from './VideoSimple';
+import VideoSlice from './VideoSlice';
 
 export {
 	BottomMenu,
@@ -34,10 +37,13 @@ export {
 	ImageWithParagraph,
 	LogoBrand,
 	Navbar,
+	OfferCta,
 	Products,
 	Profile,
 	Testimonials,
 	VideoBanner,
+	VideoSimple,
+	VideoSlice,
 };
 
 export const components = {
@@ -55,8 +61,11 @@ export const components = {
 	image_with_paragraph: ImageWithParagraph,
 	logo_brand: LogoBrand,
 	navbar: Navbar,
+	offer_cta: OfferCta,
 	products: Products,
 	profile: Profile,
 	testimonials: Testimonials,
 	video_banner: VideoBanner,
+	video_simple: VideoSimple,
+	video_slice: VideoSlice,
 };

@@ -12,6 +12,13 @@
           "placeholder": ""
         }
       },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -69,6 +76,15 @@
               "type": "SharedSlice"
             },
             "bottom_menu": {
+              "type": "SharedSlice"
+            },
+            "offer_cta": {
+              "type": "SharedSlice"
+            },
+            "video_slice": {
+              "type": "SharedSlice"
+            },
+            "video_simple": {
               "type": "SharedSlice"
             }
           }

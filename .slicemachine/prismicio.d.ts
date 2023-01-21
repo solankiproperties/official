@@ -20,6 +20,17 @@ interface HomepageDocumentData {
      */
     title: prismicT.KeyTextField;
     /**
+     * Meta Description field in *Homepage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.meta_description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    meta_description: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Homepage*
      *
      * - **Field Type**: Slice Zone
@@ -35,7 +46,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | ImageWithParagraphSlice | HeaderNotificationSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice | BottomMenuSlice;
+type HomepageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | ImageWithParagraphSlice | HeaderNotificationSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice | BottomMenuSlice | OfferCtaSlice | VideoSliceSlice | VideoSimpleSlice;
 /**
  * Homepage document from Prismic
  *
@@ -86,7 +97,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | HeaderNotificationSlice | ImageWithParagraphSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice | BottomMenuSlice;
+type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | HeaderNotificationSlice | ImageWithParagraphSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice | BottomMenuSlice | OfferCtaSlice | VideoSliceSlice | VideoSimpleSlice;
 /**
  * Page document from Prismic
  *
@@ -1111,6 +1122,111 @@ type NavbarSliceVariation = NavbarSliceDefault;
  */
 export type NavbarSlice = prismicT.SharedSlice<"navbar", NavbarSliceVariation>;
 /**
+ * Primary content in OfferCta → Primary
+ *
+ */
+interface OfferCtaSliceDefaultPrimary {
+    /**
+     * Heading field in *OfferCta → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.RichTextField;
+    /**
+     * Sub Heading field in *OfferCta → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.primary.sub_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    sub_heading: prismicT.RichTextField;
+    /**
+     * Micro Heading field in *OfferCta → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.primary.micro_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    micro_heading: prismicT.RichTextField;
+    /**
+     * Offer End field in *OfferCta → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.primary.offer_end
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    offer_end: prismicT.RichTextField;
+    /**
+     * Offer Image field in *OfferCta → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.primary.offer_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    offer_image: prismicT.ImageField<never>;
+}
+/**
+ * Item in OfferCta → Items
+ *
+ */
+export interface OfferCtaSliceDefaultItem {
+    /**
+     * Cta Text field in *OfferCta → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.items[].cta_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta_text: prismicT.KeyTextField;
+    /**
+     * Cta Link field in *OfferCta → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: offer_cta.items[].cta_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link: prismicT.LinkField;
+}
+/**
+ * Default variation for OfferCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `OfferCta`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type OfferCtaSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<OfferCtaSliceDefaultPrimary>, Simplify<OfferCtaSliceDefaultItem>>;
+/**
+ * Slice variation for *OfferCta*
+ *
+ */
+type OfferCtaSliceVariation = OfferCtaSliceDefault;
+/**
+ * OfferCta Shared Slice
+ *
+ * - **API ID**: `offer_cta`
+ * - **Description**: `OfferCta`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type OfferCtaSlice = prismicT.SharedSlice<"offer_cta", OfferCtaSliceVariation>;
+/**
  * Primary content in Products → Primary
  *
  */
@@ -1490,11 +1606,191 @@ type VideoBannerSliceVariation = VideoBannerSliceDefault;
  *
  */
 export type VideoBannerSlice = prismicT.SharedSlice<"video_banner", VideoBannerSliceVariation>;
+/**
+ * Primary content in VideoSimple → Primary
+ *
+ */
+interface VideoSimpleSliceDefaultPrimary {
+    /**
+     * Page Heading field in *VideoSimple → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_simple.primary.page_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    page_heading: prismicT.RichTextField;
+    /**
+     * Sub Heading field in *VideoSimple → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_simple.primary.sub_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    sub_heading: prismicT.RichTextField;
+    /**
+     * Video Embed Here field in *VideoSimple → Primary*
+     *
+     * - **Field Type**: Embed
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_simple.primary.video_embed_here
+     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     *
+     */
+    video_embed_here: prismicT.EmbedField;
+    /**
+     * Bg Image field in *VideoSimple → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_simple.primary.bg_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    bg_image: prismicT.ImageField<never>;
+}
+/**
+ * Item in VideoSimple → Items
+ *
+ */
+export interface VideoSimpleSliceDefaultItem {
+    /**
+     * Cta Text field in *VideoSimple → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_simple.items[].cta_text_click
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta_text_click: prismicT.KeyTextField;
+    /**
+     * Cta Link field in *VideoSimple → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_simple.items[].cta_link_click
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link_click: prismicT.LinkField;
+}
+/**
+ * Default variation for VideoSimple Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `VideoSimple`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSimpleSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<VideoSimpleSliceDefaultPrimary>, Simplify<VideoSimpleSliceDefaultItem>>;
+/**
+ * Slice variation for *VideoSimple*
+ *
+ */
+type VideoSimpleSliceVariation = VideoSimpleSliceDefault;
+/**
+ * VideoSimple Shared Slice
+ *
+ * - **API ID**: `video_simple`
+ * - **Description**: `VideoSimple`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSimpleSlice = prismicT.SharedSlice<"video_simple", VideoSimpleSliceVariation>;
+/**
+ * Primary content in VideoSlice → Primary
+ *
+ */
+interface VideoSliceSliceDefaultPrimary {
+    /**
+     * Heading field in *VideoSlice → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_slice.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.RichTextField;
+    /**
+     * Sub Heading field in *VideoSlice → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_slice.primary.sub_heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    sub_heading: prismicT.RichTextField;
+    /**
+     * Embed Here field in *VideoSlice → Primary*
+     *
+     * - **Field Type**: Embed
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_slice.primary.embed_here
+     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     *
+     */
+    embed_here: prismicT.EmbedField;
+}
+/**
+ * Item in VideoSlice → Items
+ *
+ */
+export interface VideoSliceSliceDefaultItem {
+    /**
+     * Cta field in *VideoSlice → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_slice.items[].cta
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta: prismicT.KeyTextField;
+    /**
+     * Cta Link field in *VideoSlice → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_slice.items[].cta_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link: prismicT.LinkField;
+}
+/**
+ * Default variation for VideoSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `VideoSlice`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSliceSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<VideoSliceSliceDefaultPrimary>, Simplify<VideoSliceSliceDefaultItem>>;
+/**
+ * Slice variation for *VideoSlice*
+ *
+ */
+type VideoSliceSliceVariation = VideoSliceSliceDefault;
+/**
+ * VideoSlice Shared Slice
+ *
+ * - **API ID**: `video_slice`
+ * - **Description**: `VideoSlice`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSliceSlice = prismicT.SharedSlice<"video_slice", VideoSliceSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, BottomMenuSliceDefaultItem, BottomMenuSliceDefault, BottomMenuSliceVariation, BottomMenuSlice, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, ContentCenterSliceDefaultPrimary, ContentCenterSliceDefault, ContentCenterSliceVariation, ContentCenterSlice, FeaturedSliceDefaultPrimary, FeaturedSliceDefaultItem, FeaturedSliceDefault, FeaturedSliceVariation, FeaturedSlice, FeatureWithGridSliceDefaultPrimary, FeatureWithGridSliceDefaultItem, FeatureWithGridSliceDefault, FeatureWithGridSliceVariation, FeatureWithGridSlice, FooterSliceDefaultPrimary, FooterSliceDefaultItem, FooterSliceDefault, FooterSliceVariation, FooterSlice, FooterCtaSliceDefaultPrimary, FooterCtaSliceDefaultItem, FooterCtaSliceDefault, FooterCtaSliceVariation, FooterCtaSlice, HeaderSliceDefaultPrimary, HeaderSliceDefaultItem, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeaderNotificationSliceDefaultPrimary, HeaderNotificationSliceDefaultItem, HeaderNotificationSliceDefault, HeaderNotificationSliceVariation, HeaderNotificationSlice, HeroWithEmbedSliceDefaultPrimary, HeroWithEmbedSliceDefaultItem, HeroWithEmbedSliceDefault, HeroWithEmbedSliceVariation, HeroWithEmbedSlice, ImageWithParagraphSliceDefaultPrimary, ImageWithParagraphSliceDefaultItem, ImageWithParagraphSliceDefault, ImageWithParagraphSliceVariation, ImageWithParagraphSlice, LogoBrandSliceDefaultPrimary, LogoBrandSliceDefaultItem, LogoBrandSliceDefault, LogoBrandSliceVariation, LogoBrandSlice, NavbarSliceDefaultPrimary, NavbarSliceDefaultItem, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, ProductsSliceDefaultPrimary, ProductsSliceDefaultItem, ProductsSliceDefault, ProductsSliceVariation, ProductsSlice, ProfileSliceDefaultPrimary, ProfileSliceDefaultItem, ProfileSliceDefault, ProfileSliceVariation, ProfileSlice, TestimonialsSliceDefaultPrimary, TestimonialsSliceDefaultItem, TestimonialsSliceDefault, TestimonialsSliceVariation, TestimonialsSlice, VideoBannerSliceDefaultPrimary, VideoBannerSliceDefaultItem, VideoBannerSliceDefault, VideoBannerSliceVariation, VideoBannerSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, BottomMenuSliceDefaultItem, BottomMenuSliceDefault, BottomMenuSliceVariation, BottomMenuSlice, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, ContentCenterSliceDefaultPrimary, ContentCenterSliceDefault, ContentCenterSliceVariation, ContentCenterSlice, FeaturedSliceDefaultPrimary, FeaturedSliceDefaultItem, FeaturedSliceDefault, FeaturedSliceVariation, FeaturedSlice, FeatureWithGridSliceDefaultPrimary, FeatureWithGridSliceDefaultItem, FeatureWithGridSliceDefault, FeatureWithGridSliceVariation, FeatureWithGridSlice, FooterSliceDefaultPrimary, FooterSliceDefaultItem, FooterSliceDefault, FooterSliceVariation, FooterSlice, FooterCtaSliceDefaultPrimary, FooterCtaSliceDefaultItem, FooterCtaSliceDefault, FooterCtaSliceVariation, FooterCtaSlice, HeaderSliceDefaultPrimary, HeaderSliceDefaultItem, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeaderNotificationSliceDefaultPrimary, HeaderNotificationSliceDefaultItem, HeaderNotificationSliceDefault, HeaderNotificationSliceVariation, HeaderNotificationSlice, HeroWithEmbedSliceDefaultPrimary, HeroWithEmbedSliceDefaultItem, HeroWithEmbedSliceDefault, HeroWithEmbedSliceVariation, HeroWithEmbedSlice, ImageWithParagraphSliceDefaultPrimary, ImageWithParagraphSliceDefaultItem, ImageWithParagraphSliceDefault, ImageWithParagraphSliceVariation, ImageWithParagraphSlice, LogoBrandSliceDefaultPrimary, LogoBrandSliceDefaultItem, LogoBrandSliceDefault, LogoBrandSliceVariation, LogoBrandSlice, NavbarSliceDefaultPrimary, NavbarSliceDefaultItem, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, OfferCtaSliceDefaultPrimary, OfferCtaSliceDefaultItem, OfferCtaSliceDefault, OfferCtaSliceVariation, OfferCtaSlice, ProductsSliceDefaultPrimary, ProductsSliceDefaultItem, ProductsSliceDefault, ProductsSliceVariation, ProductsSlice, ProfileSliceDefaultPrimary, ProfileSliceDefaultItem, ProfileSliceDefault, ProfileSliceVariation, ProfileSlice, TestimonialsSliceDefaultPrimary, TestimonialsSliceDefaultItem, TestimonialsSliceDefault, TestimonialsSliceVariation, TestimonialsSlice, VideoBannerSliceDefaultPrimary, VideoBannerSliceDefaultItem, VideoBannerSliceDefault, VideoBannerSliceVariation, VideoBannerSlice, VideoSimpleSliceDefaultPrimary, VideoSimpleSliceDefaultItem, VideoSimpleSliceDefault, VideoSimpleSliceVariation, VideoSimpleSlice, VideoSliceSliceDefaultPrimary, VideoSliceSliceDefaultItem, VideoSliceSliceDefault, VideoSliceSliceVariation, VideoSliceSlice };
     }
 }
