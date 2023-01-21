@@ -60,6 +60,17 @@ interface PageDocumentData {
      */
     title: prismicT.KeyTextField;
     /**
+     * Description field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Page*
      *
      * - **Field Type**: Slice Zone
