@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-          {/* <link rel="shortcut icon" href={favicon} /> */}]
+          {/* <link rel="shortcut icon" href={favicon} /> */}
           <title>Unboxx Business | Grow Your Business Now</title>
           <link rel="shortcut icon" href="/icon.png" />
         </Head>
