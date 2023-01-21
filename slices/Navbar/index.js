@@ -32,10 +32,6 @@ const Navbar = ({ slice }) => (
   </ul>
 </nav>
 
-
-
-
-
 )
 
 export default Navbar

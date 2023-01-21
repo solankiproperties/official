@@ -67,6 +67,9 @@
             },
             "feature_with_grid": {
               "type": "SharedSlice"
+            },
+            "bottom_menu": {
+              "type": "SharedSlice"
             }
           }
         }

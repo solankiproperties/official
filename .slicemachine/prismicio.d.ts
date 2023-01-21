@@ -35,7 +35,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | ImageWithParagraphSlice | HeaderNotificationSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice;
+type HomepageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | ImageWithParagraphSlice | HeaderNotificationSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice | BottomMenuSlice;
 /**
  * Homepage document from Prismic
  *
@@ -86,7 +86,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | HeaderNotificationSlice | ImageWithParagraphSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice;
+type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | FeaturedSlice | ProductsSlice | CallToActionSlice | TestimonialsSlice | FooterSlice | HeaderSlice | NavbarSlice | VideoBannerSlice | ContentSlice | ContentCenterSlice | HeaderNotificationSlice | ImageWithParagraphSlice | FooterCtaSlice | ProfileSlice | FeatureWithGridSlice | BottomMenuSlice;
 /**
  * Page document from Prismic
  *
@@ -98,6 +98,55 @@ type PageDocumentDataSlicesSlice = HeroWithEmbedSlice | LogoBrandSlice | Feature
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = HomepageDocument | PageDocument;
+/**
+ * Item in BottomMenu → Items
+ *
+ */
+export interface BottomMenuSliceDefaultItem {
+    /**
+     * Menu Text field in *BottomMenu → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: bottom_menu.items[].cta_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cta_text: prismicT.KeyTextField;
+    /**
+     * Menu Link field in *BottomMenu → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: bottom_menu.items[].cta_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    cta_link: prismicT.LinkField;
+}
+/**
+ * Default variation for BottomMenu Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `BottomMenu`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BottomMenuSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<BottomMenuSliceDefaultItem>>;
+/**
+ * Slice variation for *BottomMenu*
+ *
+ */
+type BottomMenuSliceVariation = BottomMenuSliceDefault;
+/**
+ * BottomMenu Shared Slice
+ *
+ * - **API ID**: `bottom_menu`
+ * - **Description**: `BottomMenu`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BottomMenuSlice = prismicT.SharedSlice<"bottom_menu", BottomMenuSliceVariation>;
 /**
  * Primary content in CallToAction → Primary
  *
@@ -1446,6 +1495,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, ContentCenterSliceDefaultPrimary, ContentCenterSliceDefault, ContentCenterSliceVariation, ContentCenterSlice, FeaturedSliceDefaultPrimary, FeaturedSliceDefaultItem, FeaturedSliceDefault, FeaturedSliceVariation, FeaturedSlice, FeatureWithGridSliceDefaultPrimary, FeatureWithGridSliceDefaultItem, FeatureWithGridSliceDefault, FeatureWithGridSliceVariation, FeatureWithGridSlice, FooterSliceDefaultPrimary, FooterSliceDefaultItem, FooterSliceDefault, FooterSliceVariation, FooterSlice, FooterCtaSliceDefaultPrimary, FooterCtaSliceDefaultItem, FooterCtaSliceDefault, FooterCtaSliceVariation, FooterCtaSlice, HeaderSliceDefaultPrimary, HeaderSliceDefaultItem, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeaderNotificationSliceDefaultPrimary, HeaderNotificationSliceDefaultItem, HeaderNotificationSliceDefault, HeaderNotificationSliceVariation, HeaderNotificationSlice, HeroWithEmbedSliceDefaultPrimary, HeroWithEmbedSliceDefaultItem, HeroWithEmbedSliceDefault, HeroWithEmbedSliceVariation, HeroWithEmbedSlice, ImageWithParagraphSliceDefaultPrimary, ImageWithParagraphSliceDefaultItem, ImageWithParagraphSliceDefault, ImageWithParagraphSliceVariation, ImageWithParagraphSlice, LogoBrandSliceDefaultPrimary, LogoBrandSliceDefaultItem, LogoBrandSliceDefault, LogoBrandSliceVariation, LogoBrandSlice, NavbarSliceDefaultPrimary, NavbarSliceDefaultItem, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, ProductsSliceDefaultPrimary, ProductsSliceDefaultItem, ProductsSliceDefault, ProductsSliceVariation, ProductsSlice, ProfileSliceDefaultPrimary, ProfileSliceDefaultItem, ProfileSliceDefault, ProfileSliceVariation, ProfileSlice, TestimonialsSliceDefaultPrimary, TestimonialsSliceDefaultItem, TestimonialsSliceDefault, TestimonialsSliceVariation, TestimonialsSlice, VideoBannerSliceDefaultPrimary, VideoBannerSliceDefaultItem, VideoBannerSliceDefault, VideoBannerSliceVariation, VideoBannerSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, BottomMenuSliceDefaultItem, BottomMenuSliceDefault, BottomMenuSliceVariation, BottomMenuSlice, CallToActionSliceDefaultPrimary, CallToActionSliceDefaultItem, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, ContentCenterSliceDefaultPrimary, ContentCenterSliceDefault, ContentCenterSliceVariation, ContentCenterSlice, FeaturedSliceDefaultPrimary, FeaturedSliceDefaultItem, FeaturedSliceDefault, FeaturedSliceVariation, FeaturedSlice, FeatureWithGridSliceDefaultPrimary, FeatureWithGridSliceDefaultItem, FeatureWithGridSliceDefault, FeatureWithGridSliceVariation, FeatureWithGridSlice, FooterSliceDefaultPrimary, FooterSliceDefaultItem, FooterSliceDefault, FooterSliceVariation, FooterSlice, FooterCtaSliceDefaultPrimary, FooterCtaSliceDefaultItem, FooterCtaSliceDefault, FooterCtaSliceVariation, FooterCtaSlice, HeaderSliceDefaultPrimary, HeaderSliceDefaultItem, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeaderNotificationSliceDefaultPrimary, HeaderNotificationSliceDefaultItem, HeaderNotificationSliceDefault, HeaderNotificationSliceVariation, HeaderNotificationSlice, HeroWithEmbedSliceDefaultPrimary, HeroWithEmbedSliceDefaultItem, HeroWithEmbedSliceDefault, HeroWithEmbedSliceVariation, HeroWithEmbedSlice, ImageWithParagraphSliceDefaultPrimary, ImageWithParagraphSliceDefaultItem, ImageWithParagraphSliceDefault, ImageWithParagraphSliceVariation, ImageWithParagraphSlice, LogoBrandSliceDefaultPrimary, LogoBrandSliceDefaultItem, LogoBrandSliceDefault, LogoBrandSliceVariation, LogoBrandSlice, NavbarSliceDefaultPrimary, NavbarSliceDefaultItem, NavbarSliceDefault, NavbarSliceVariation, NavbarSlice, ProductsSliceDefaultPrimary, ProductsSliceDefaultItem, ProductsSliceDefault, ProductsSliceVariation, ProductsSlice, ProfileSliceDefaultPrimary, ProfileSliceDefaultItem, ProfileSliceDefault, ProfileSliceVariation, ProfileSlice, TestimonialsSliceDefaultPrimary, TestimonialsSliceDefaultItem, TestimonialsSliceDefault, TestimonialsSliceVariation, TestimonialsSlice, VideoBannerSliceDefaultPrimary, VideoBannerSliceDefaultItem, VideoBannerSliceDefault, VideoBannerSliceVariation, VideoBannerSlice };
     }
 }
